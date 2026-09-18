@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnkiDroid — Moving from Anki — EverRecall</title>
+<meta name="description" content="Android">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #FAF9F6;
+  --surface: #F0EDE6;
+  --text-primary: #2C2A25;
+  --text-secondary: #6B6860;
+  --accent: #3D7A56;
+  --accent-subtle: rgba(61, 122, 86, 0.12);
+  --warning: #C8AA5A;
+  --warning-subtle: rgba(200, 170, 90, 0.16);
+  --info: #78A0BE;
+  --border: rgba(44, 42, 37, 0.12);
+  --max-width: 45rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1C1C1E;
+    --surface: #2C2C2E;
+    --text-primary: #E8E6E1;
+    --text-secondary: #A0A09B;
+    --accent: #5E9E78;
+    --accent-subtle: rgba(94, 158, 120, 0.16);
+    --warning-subtle: rgba(200, 170, 90, 0.14);
+    --border: rgba(232, 230, 225, 0.14);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: ui-sans-serif, -apple-system, "Hiragino Sans", "Noto Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+h1, h2, h3 {
+  font-family: ui-serif, Georgia, "Hiragino Mincho ProN", serif;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+h1 { font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); font-weight: 800; margin: 0 0 var(--space-s); }
+h2 { font-size: 1.375rem; margin: 0 0 var(--space-s); }
+h3 { font-size: 1.125rem; margin: var(--space-m) 0 var(--space-s); }
+p { margin: 0 0 var(--space-s); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+code {
+  font-family: ui-monospace, Menlo, monospace;
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+}
+ul { margin: 0 0 var(--space-s); padding-left: 1.25em; }
+li { margin-bottom: 0.4em; }
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-l) clamp(1rem, 4vw, 2.5rem) var(--space-xl);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-s);
+}
+.eyebrow:hover { color: var(--accent); }
+.option-list { list-style: none; margin: var(--space-m) 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.option-card {
+  display: block;
+  padding: var(--space-m);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--surface);
+  transition: border-color 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent); }
+.option-card .option-title { display: block; font-weight: 700; font-size: 1.0625rem; }
+.option-card .option-subtitle { display: block; margin-top: 0.2em; font-size: 0.875rem; color: var(--text-secondary); }
+.callout {
+  background: var(--warning-subtle);
+  border-radius: 0.75rem;
+  padding: var(--space-m);
+  margin: var(--space-m) 0;
+}
+.callout-title { font-weight: 700; margin-bottom: 0.5em; }
+section.block { margin-top: var(--space-xl); padding-top: var(--space-l); border-top: 1px solid var(--border); }
+section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border-top: none; }
+.flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: var(--space-m);
+  background: var(--surface);
+  border-radius: 1rem;
+  margin: var(--space-m) 0;
+  overflow-x: auto;
+}
+.flow-step { flex: 1; min-width: 4.5rem; text-align: center; }
+.flow-step .flow-icon {
+  width: 2.75rem; height: 2.75rem; line-height: 2.75rem;
+  border-radius: 50%; background: var(--accent-subtle); color: var(--accent);
+  margin: 0 auto 0.4em; font-weight: 700; font-size: 0.9rem;
+}
+.flow-step .flow-label { font-size: 0.75rem; color: var(--text-primary); }
+.flow-arrow { color: var(--text-secondary); padding-top: 1rem; flex: 0 0 auto; }
+.flow-note { font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0.5em; }
+.lang-switcher { margin-top: var(--space-xl); padding-top: var(--space-l); border-top: 1px solid var(--border); }
+.lang-switcher h2 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); }
+.lang-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.lang-list a { font-size: 0.9375rem; }
+.lang-list a[aria-current="true"] { color: var(--text-primary); font-weight: 700; text-decoration: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .container { animation: fade-in 0.25s ease both; }
+  @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="eyebrow" href="index.html">&larr; Back to selection</a>
+<h1>AnkiDroid</h1>
+<section class="block"><p>1. From the deck list's overflow menu, choose <strong>&quot;Export&quot;</strong>. 2. Pick a format (plain text or Anki package), then check these two settings:</p>
+<aside class="callout">
+<p class="callout-title">⚠️ Always check these two switches</p>
+<ul>
+<li><strong>&quot;Include media&quot; → OFF</strong></li>
+<li><strong>&quot;Support older Anki versions&quot; → ON</strong></li>
+</ul>
+</aside>
+<p>3. Send the exported file to your iPhone or iPad using any method available on Android — Google Drive, Gmail, etc. 4. Once it's on your iPhone or iPad, touch and hold the file and choose <strong>&quot;Open in EverRecall&quot;</strong> from the share sheet.</p>
+</section><section class="block">
+<h2>What doesn't carry over</h2>
+<p>Some things don't carry over from Anki. Please keep this in mind before you start:</p>
+<ul>
+<li><strong>Audio and image files</strong> (EverRecall only imports text-based cards)</li>
+<li><strong>Study history and review intervals</strong> (your accuracy and next-review dates in Anki are not carried over — learning starts fresh once cards are imported into EverRecall)</li>
+<li><strong>Cards with no text</strong> (audio-only, image-only, and image occlusion cards have no text to import, so they're skipped)</li>
+</ul>
+
+</section><section class="block">
+<h2>Automatic iCloud folder import</h2>
+<p>Drop <code>.txt</code> or <code>.md</code> files into the <strong>iCloud Drive → EverRecall</strong> folder (in the Files app), and EverRecall automatically scans it every time you open the app — adding only the newly placed files as cards.</p>
+<ul>
+<li>This is a one-way process. Deleting cards inside EverRecall does not delete the files in the iCloud folder.</li>
+<li>Once a file is imported, it's automatically moved into a &quot;Processed&quot; subfolder inside the same folder, so you can tell at a glance what's already been imported.</li>
+<li>CSV files and Anki packages (.apkg / .colpkg) are <strong>not</strong> picked up by automatic iCloud folder import — only text (.txt) and Markdown (.md) files are. Import CSV or Anki packages via the import screen or the share sheet instead.</li>
+</ul>
+
+</section><nav class="lang-switcher" aria-label="Language">
+<h2>Language</h2>
+<ul class="lang-list">
+<li><a href="../de/android.html">Deutsch</a></li>
+<li><a href="../en/android.html" aria-current="true">English</a></li>
+<li><a href="../es/android.html">Español</a></li>
+<li><a href="../fr/android.html">Français</a></li>
+<li><a href="../ja/android.html">日本語</a></li>
+<li><a href="../ko/android.html">한국어</a></li>
+<li><a href="../pt/android.html">Português</a></li>
+<li><a href="../ru/android.html">Русский</a></li>
+<li><a href="../zh-Hans/android.html">简体中文</a></li>
+<li><a href="../zh-Hant/android.html">繁體中文</a></li>
+</ul>
+</nav>
+</div>
+</body>
+</html>

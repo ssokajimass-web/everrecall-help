@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnkiMobile — Migrar desde Anki — EverRecall</title>
+<meta name="description" content="iPhone y iPad">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #FAF9F6;
+  --surface: #F0EDE6;
+  --text-primary: #2C2A25;
+  --text-secondary: #6B6860;
+  --accent: #3D7A56;
+  --accent-subtle: rgba(61, 122, 86, 0.12);
+  --warning: #C8AA5A;
+  --warning-subtle: rgba(200, 170, 90, 0.16);
+  --info: #78A0BE;
+  --border: rgba(44, 42, 37, 0.12);
+  --max-width: 45rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1C1C1E;
+    --surface: #2C2C2E;
+    --text-primary: #E8E6E1;
+    --text-secondary: #A0A09B;
+    --accent: #5E9E78;
+    --accent-subtle: rgba(94, 158, 120, 0.16);
+    --warning-subtle: rgba(200, 170, 90, 0.14);
+    --border: rgba(232, 230, 225, 0.14);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: ui-sans-serif, -apple-system, "Hiragino Sans", "Noto Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+h1, h2, h3 {
+  font-family: ui-serif, Georgia, "Hiragino Mincho ProN", serif;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+h1 { font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); font-weight: 800; margin: 0 0 var(--space-s); }
+h2 { font-size: 1.375rem; margin: 0 0 var(--space-s); }
+h3 { font-size: 1.125rem; margin: var(--space-m) 0 var(--space-s); }
+p { margin: 0 0 var(--space-s); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+code {
+  font-family: ui-monospace, Menlo, monospace;
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+}
+ul { margin: 0 0 var(--space-s); padding-left: 1.25em; }
+li { margin-bottom: 0.4em; }
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-l) clamp(1rem, 4vw, 2.5rem) var(--space-xl);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: var(--space-s);
+}
+.eyebrow:hover { color: var(--accent); }
+.option-list { list-style: none; margin: var(--space-m) 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.option-card {
+  display: block;
+  padding: var(--space-m);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--surface);
+  transition: border-color 0.15s ease;
+}
+.option-card:hover { border-color: var(--accent); }
+.option-card .option-title { display: block; font-weight: 700; font-size: 1.0625rem; }
+.option-card .option-subtitle { display: block; margin-top: 0.2em; font-size: 0.875rem; color: var(--text-secondary); }
+.callout {
+  background: var(--warning-subtle);
+  border-radius: 0.75rem;
+  padding: var(--space-m);
+  margin: var(--space-m) 0;
+}
+.callout-title { font-weight: 700; margin-bottom: 0.5em; }
+section.block { margin-top: var(--space-xl); padding-top: var(--space-l); border-top: 1px solid var(--border); }
+section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border-top: none; }
+.flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: var(--space-m);
+  background: var(--surface);
+  border-radius: 1rem;
+  margin: var(--space-m) 0;
+  overflow-x: auto;
+}
+.flow-step { flex: 1; min-width: 4.5rem; text-align: center; }
+.flow-step .flow-icon {
+  width: 2.75rem; height: 2.75rem; line-height: 2.75rem;
+  border-radius: 50%; background: var(--accent-subtle); color: var(--accent);
+  margin: 0 auto 0.4em; font-weight: 700; font-size: 0.9rem;
+}
+.flow-step .flow-label { font-size: 0.75rem; color: var(--text-primary); }
+.flow-arrow { color: var(--text-secondary); padding-top: 1rem; flex: 0 0 auto; }
+.flow-note { font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0.5em; }
+.lang-switcher { margin-top: var(--space-xl); padding-top: var(--space-l); border-top: 1px solid var(--border); }
+.lang-switcher h2 { font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); }
+.lang-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.lang-list a { font-size: 0.9375rem; }
+.lang-list a[aria-current="true"] { color: var(--text-primary); font-weight: 700; text-decoration: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .container { animation: fade-in 0.25s ease both; }
+  @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a class="eyebrow" href="index.html">&larr; Volver a la selección</a>
+<h1>AnkiMobile</h1>
+<p class="flow-note">Todo esto ocurre en tu iPhone</p>
+<div class="flow" role="img" aria-label="Exportar → Revisar los interruptores → Hoja de compartir → Abrir en EverRecall">
+<div class="flow-step"><span class="flow-icon" aria-hidden="true">1</span><span class="flow-label">Exportar</span></div><span class="flow-arrow" aria-hidden="true">→</span>
+<div class="flow-step"><span class="flow-icon" aria-hidden="true">2</span><span class="flow-label">Revisar los interruptores</span></div><span class="flow-arrow" aria-hidden="true">→</span>
+<div class="flow-step"><span class="flow-icon" aria-hidden="true">3</span><span class="flow-label">Hoja de compartir</span></div><span class="flow-arrow" aria-hidden="true">→</span>
+<div class="flow-step"><span class="flow-icon" aria-hidden="true">4</span><span class="flow-label">Abrir en EverRecall</span></div>
+</div>
+<!-- SCREENSHOT PLACEHOLDER: AnkiMobileのエクスポート画面キャプチャを後日ここに追加する（本文は画像なしでも成立する書き方にしてある） --><section class="block"><p>Con AnkiMobile, puede exportar e importar las tarjetas completamente desde su iPhone, sin necesidad de un ordenador.</p>
+<h3>Pasos a seguir</h3>
+<p>1. En la pantalla de la lista de mazos, toque el botón situado <strong>en la parte inferior izquierda</strong> (tiene el aspecto de un engranaje o de «⋯»). 2. Seleccione <strong>«Exportar»</strong>. 3. Elija el formato de exportación y compruebe estos dos ajustes:</p>
+<aside class="callout">
+<p class="callout-title">⚠️ Compruebe siempre estos dos ajustes</p>
+<ul>
+<li><strong>«Incluir archivos multimedia» → Desactivado</strong></li>
+<li><strong>«Admitir versiones anteriores de Anki» → Activado</strong></li>
+</ul>
+</aside>
+<p>4. Al finalizar la exportación, se abrirá automáticamente la <strong>hoja para compartir</strong>. Elija <strong>«Abrir en EverRecall»</strong> para ir directamente a la pantalla de importación.</p>
+<p>Estos 4 pasos se realizan por completo en su iPhone, sin necesidad de un ordenador.</p>
+</section><section class="block">
+<h2>Lo que no se transfiere</h2>
+<p>Hay ciertos elementos que no se transfieren desde Anki. Tenga esto en cuenta antes de empezar:</p>
+<ul>
+<li><strong>Archivos de audio e imágenes</strong> (EverRecall solo importa tarjetas basadas en texto)</li>
+<li><strong>Historial de estudio e intervalos de repaso</strong> (el porcentaje de aciertos y las próximas fechas de repaso de Anki no se conservan; el aprendizaje comienza de nuevo desde el momento en que las tarjetas se importan a EverRecall)</li>
+<li><strong>Tarjetas sin texto</strong> (las tarjetas que solo contienen audio, solo imágenes, o las tarjetas de oclusión de imagen no tienen contenido de texto que importar, por lo que se omiten)</li>
+</ul>
+
+</section><section class="block">
+<h2>Importación automática desde una carpeta de iCloud</h2>
+<p>Coloque archivos <code>.txt</code> o <code>.md</code> en la carpeta <strong>iCloud Drive → EverRecall</strong> (dentro de la aplicación Archivos), y EverRecall la escaneará automáticamente cada vez que abra la aplicación, añadiendo como tarjetas únicamente los archivos que se hayan colocado recientemente.</p>
+<ul>
+<li>Se trata de un proceso unidireccional. Eliminar tarjetas dentro de EverRecall no elimina los archivos de la carpeta de iCloud.</li>
+<li>Una vez importado un archivo, este se traslada automáticamente a una subcarpeta «Procesados» dentro de la misma carpeta, de modo que puede saber de un vistazo qué archivos ya se han importado.</li>
+<li>Los archivos CSV y los paquetes de Anki (.apkg / .colpkg) <strong>no</strong> son compatibles con la importación automática desde la carpeta de iCloud; solo se admiten los archivos de texto (.txt) y Markdown (.md). Importe los archivos CSV o los paquetes de Anki mediante la pantalla de importación o la hoja para compartir.</li>
+</ul>
+
+</section><nav class="lang-switcher" aria-label="Idioma">
+<h2>Idioma</h2>
+<ul class="lang-list">
+<li><a href="../de/mobile.html">Deutsch</a></li>
+<li><a href="../en/mobile.html">English</a></li>
+<li><a href="../es/mobile.html" aria-current="true">Español</a></li>
+<li><a href="../fr/mobile.html">Français</a></li>
+<li><a href="../ja/mobile.html">日本語</a></li>
+<li><a href="../ko/mobile.html">한국어</a></li>
+<li><a href="../pt/mobile.html">Português</a></li>
+<li><a href="../ru/mobile.html">Русский</a></li>
+<li><a href="../zh-Hans/mobile.html">简体中文</a></li>
+<li><a href="../zh-Hant/mobile.html">繁體中文</a></li>
+</ul>
+</nav>
+</div>
+</body>
+</html>
