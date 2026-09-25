@@ -138,19 +138,29 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <div class="container">
 <a class="eyebrow" href="index.html">&larr; Zurück zur Auswahl</a>
 <h1>Sonstiges</h1>
-<section class="block"><p>Falls keiner der vier oben genannten Fälle zutrifft oder Sie nur wissen möchten, welche Dateiformate unterstützt werden, finden Sie hier die vollständige Liste. EverRecall akzeptiert:</p>
-<h3>Einfügen (mit Trennzeichen)</h3>
-<p>Fügen Sie den Text direkt in das Textfeld des Import-Bildschirms ein. Trennen Sie die Karten durch ein Trennzeichen wie einen Zeilenumbruch oder einen Tabulator.</p>
-<h3>Textdatei (.txt)</h3>
-<p>Jede Zeile wird zu einer Karte. Um Vorder- und Rückseite innerhalb einer Zeile zu trennen, verwenden Sie einen Tabulator (z. B. „Vorderseite[Tab]Rückseite&quot;).</p>
+<section class="block"><p>Falls keiner der oben genannten Fälle zutrifft oder Sie nur wissen möchten, welche Dateiformate unterstützt werden, finden Sie hier die vollständige Liste. EverRecall akzeptiert:</p>
+<h3>ChatGPT oder Gemini die Karten schreiben lassen</h3>
+<p>Tippen Sie auf dem Import-Bildschirm auf <strong>„Prompt für KI kopieren&quot;</strong>. Dadurch wird eine Anfrage kopiert, die mit Ihren aktuellen Trennzeichen-Einstellungen formatiert ist. Fügen Sie sie zusammen mit dem Text (oder Thema), aus dem Karten werden sollen, in ChatGPT oder Gemini ein.</p>
+<p>1. Tippen Sie auf dem Import-Bildschirm auf „Prompt für KI kopieren&quot; 2. Fügen Sie ihn in ChatGPT oder Gemini ein, fügen Sie dann den Text oder das Thema ein (oder tippen Sie ihn), aus dem Karten entstehen sollen, und senden Sie die Nachricht 3. Verwenden Sie die Kopieren-Schaltfläche im Code-Block der Antwort, um das Ergebnis zu kopieren 4. Fügen Sie es in den Import-Bildschirm von EverRecall ein, oder teilen Sie den ausgewählten Text und wählen Sie „An EverRecall senden&quot; (siehe „Die zwei Funktionen des Teilen-Menüs&quot; weiter unten)</p>
+<h3>Die gemeinsame Trennzeichen-Regel (Einfügen, geteilter Text, der iCloud-Ordner und Textdateien)</h3>
+<p>Einfügen, das Teilen von Text über das Teilen-Menü, der iCloud-Ordner und Textdateien (.txt / .md) teilen Karten alle anhand derselben Trennzeichen-Einstellungen auf. Sie können diese jederzeit im Bereich „Trennzeichen&quot; des Import-Bildschirms ändern.</p>
+<ul>
+<li>Standard: Karten werden durch eine Zeile getrennt, die nur <strong>„---&quot;</strong> enthält, und Vorder-/Rückseite einer Karte werden durch eine Zeile getrennt, die nur <strong>„==&quot;</strong> enthält</li>
+<li>Ein Symbol zählt nur dann als Trennzeichen, wenn die gesamte Zeile nur aus diesem Symbol besteht — ein Symbol innerhalb eines Satzes (z. B. „A---B&quot;) führt nie zu einer Trennung</li>
+<li>Um eine Gruppe von Karten mit Buchtitel und Autor zu kennzeichnen, verwenden Sie Zeilen wie <code>@@title: Buchtitel</code> und <code>@@author: Autorenname</code> (dieses Symbol lässt sich in den Einstellungen ebenfalls ändern)</li>
+</ul>
+<h3>Die zwei Funktionen des Teilen-Menüs</h3>
+<p>Das Teilen-Menü auf iPhone/iPad bietet zwei unterschiedliche EverRecall-Funktionen — hier der Unterschied:</p>
+<ul>
+<li><strong>„In EverRecall öffnen&quot;</strong> (beim Teilen einer Datei): öffnet den Import-Bildschirm von EverRecall, sodass Sie die Karten vor dem Hinzufügen überprüfen können</li>
+<li><strong>„An EverRecall senden&quot;</strong> (beim Teilen von ausgewähltem Text): fügt ihn direkt dem Posteingang hinzu, ohne Bestätigungsbildschirm. Sie können die Karten danach weiterhin bearbeiten oder löschen</li>
+</ul>
 <h3>CSV (.csv)</h3>
-<p>Die erste Spalte wird als Vorderseite, die zweite Spalte als Rückseite eingelesen.</p>
+<p>Die erste Spalte wird zur Vorderseite, die zweite Spalte wird zur Rückseite. (Dies ist ein Tabellenformat und wird von den obigen Trennzeichen-Einstellungen nicht beeinflusst.)</p>
 <h3>Anki-Paket (.apkg / .colpkg)</h3>
 <p>Sie können eine von Anki exportierte Paketdatei direkt importieren. Sie müssen beim Export keine Einstellungen ändern.</p>
 <h3>Automatischer Import über den iCloud-Ordner</h3>
-<p>Legen Sie Dateien einfach in einen iCloud-Ordner – sie werden automatisch erkannt und importiert. Details dazu finden Sie auf der nächsten Seite.</p>
-<h3>Datei öffnen (für alle Formate)</h3>
-<p>Für alle oben genannten Formate wählen Sie auf dem iPhone/iPad im Teilen-Menü <strong>„In EverRecall öffnen&quot;</strong>, oder wählen Sie die Datei direkt im Import-Bildschirm von EverRecall aus.</p>
+<p>Legen Sie einfach .txt- / .md-Dateien in einen iCloud-Ordner – sie werden automatisch erkannt, nach derselben oben beschriebenen Trennzeichen-Regel. Details dazu finden Sie auf der nächsten Seite.</p>
 </section><section class="block">
 <h2>Was nicht übernommen wird</h2>
 <p>Einige Dinge werden bei Anki nicht übernommen. Bitte beachten Sie dies im Voraus.</p>

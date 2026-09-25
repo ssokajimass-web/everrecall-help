@@ -139,18 +139,28 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <a class="eyebrow" href="index.html">&larr; Voltar à seleção</a>
 <h1>Outro</h1>
 <section class="block"><p>Se nenhuma das opções acima corresponder à sua situação, ou se você só quer saber quais formatos de arquivo funcionam, aqui está a lista completa. O EverRecall aceita:</p>
-<h3>Colar texto (com um delimitador)</h3>
-<p>Cole o texto diretamente no campo de texto da tela de importação. Separe os cartões usando um delimitador, como uma quebra de linha ou uma tabulação.</p>
-<h3>Arquivo de texto (.txt)</h3>
-<p>Cada linha se torna um cartão. Para dividir uma linha em frente e verso, separe-os com uma tabulação dentro da linha (por exemplo: &quot;Frente[tab]Verso&quot;).</p>
+<h3>Peça ao ChatGPT ou Gemini para criar os cartões</h3>
+<p>Na tela de importação, toque em <strong>&quot;Copiar mensagem para a IA&quot;</strong>. Isso copia um pedido formatado de acordo com suas configurações de delimitador atuais. Cole no ChatGPT ou Gemini junto com o texto (ou tema) que você quer transformar em cartões.</p>
+<p>1. Na tela de importação, toque em &quot;Copiar mensagem para a IA&quot; 2. Cole no ChatGPT ou Gemini, depois cole (ou digite) o texto ou tema a partir do qual quer gerar cartões, e envie 3. Use o botão de copiar no bloco de código da resposta para copiar o resultado 4. Cole na tela de importação do EverRecall, ou compartilhe o texto selecionado e escolha &quot;Enviar para o EverRecall&quot; (veja &quot;As duas ações do menu de compartilhamento&quot; abaixo)</p>
+<h3>A regra de delimitador compartilhada (colar, compartilhar texto, a pasta do iCloud e arquivos de texto)</h3>
+<p>Colar, compartilhar texto pelo menu de compartilhamento, a pasta do iCloud e arquivos de texto (.txt / .md) dividem os cartões usando as mesmas configurações de delimitador. Você pode alterá-las a qualquer momento na seção &quot;Delimitadores&quot; da tela de importação.</p>
+<ul>
+<li>Padrão: os cartões são separados por uma linha que contém apenas <strong>&quot;---&quot;</strong>, e a frente/verso de um cartão são separados por uma linha que contém apenas <strong>&quot;==&quot;</strong></li>
+<li>Um símbolo só conta como delimitador quando a linha inteira é apenas esse símbolo — um símbolo dentro de uma frase (por exemplo, &quot;A---B&quot;) nunca causa uma divisão</li>
+<li>Para marcar um lote de cartões com o título de um livro e o autor, use linhas como <code>@@title: Título do Livro</code> e <code>@@author: Nome do Autor</code> (esse símbolo também pode ser alterado nas configurações)</li>
+</ul>
+<h3>As duas ações do menu de compartilhamento</h3>
+<p>O menu de compartilhamento do iPhone/iPad oferece duas ações diferentes do EverRecall — aqui está a diferença:</p>
+<ul>
+<li><strong>&quot;Abrir no EverRecall&quot;</strong> (ao compartilhar um arquivo): abre a tela de importação do EverRecall para que você possa revisar os cartões antes de adicioná-los</li>
+<li><strong>&quot;Enviar para o EverRecall&quot;</strong> (ao compartilhar um texto selecionado): adiciona-o diretamente à Caixa de Entrada, sem tela de confirmação. Você ainda pode editar ou excluir os cartões depois</li>
+</ul>
 <h3>CSV (.csv)</h3>
-<p>A primeira coluna se torna a frente, e a segunda coluna se torna o verso.</p>
+<p>A primeira coluna se torna a frente, e a segunda coluna se torna o verso. (Este é um formato de tabela e não é afetado pelas configurações de delimitador acima.)</p>
 <h3>Pacote do Anki (.apkg / .colpkg)</h3>
 <p>Você pode importar um pacote de exportação do Anki diretamente. Não é necessário alterar nenhuma configuração de exportação.</p>
 <h3>Adição automática pela pasta do iCloud</h3>
-<p>Basta colocar os arquivos em uma pasta do iCloud para que sejam importados automaticamente. Veja detalhes na próxima página.</p>
-<h3>Como abrir um arquivo (todos os formatos)</h3>
-<p>Para qualquer um dos formatos acima, escolha <strong>&quot;Abrir no EverRecall&quot;</strong> no menu de compartilhamento do iPhone/iPad, ou selecione o arquivo diretamente na tela de importação do EverRecall.</p>
+<p>Basta colocar arquivos .txt / .md em uma pasta do iCloud, e eles serão detectados automaticamente, seguindo a mesma regra de delimitador descrita acima. Veja detalhes na próxima página.</p>
 </section><section class="block">
 <h2>O que não é migrado</h2>
 <p>Algumas coisas não são transferidas do Anki. Fique ciente disso antes de começar:</p>

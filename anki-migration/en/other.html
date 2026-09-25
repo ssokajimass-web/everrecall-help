@@ -139,18 +139,28 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <a class="eyebrow" href="index.html">&larr; Back to selection</a>
 <h1>Other</h1>
 <section class="block"><p>If none of the above match your situation, or you just want to know what file formats work, here's the full list. EverRecall accepts:</p>
-<h3>Paste (with a delimiter)</h3>
-<p>Paste text directly into the import screen's text field. Separate cards using a delimiter such as a line break or tab.</p>
-<h3>Text file (.txt)</h3>
-<p>Each line becomes one card. To split a line into front and back, separate them with a tab within the line (e.g. &quot;Front[tab]Back&quot;).</p>
+<h3>Have ChatGPT or Gemini write the cards</h3>
+<p>On the import screen, tap <strong>&quot;Copy prompt for AI&quot;</strong>. This copies a request formatted with your current delimiter settings. Paste it into ChatGPT or Gemini along with the text (or topic) you want turned into cards.</p>
+<p>1. On the import screen, tap &quot;Copy prompt for AI&quot; 2. Paste it into ChatGPT or Gemini, then paste (or type) the text or topic you want cards from, and send 3. Use the copy button on the reply's code block to copy the result 4. Paste it into EverRecall's import screen, or share the selected text and choose &quot;Send to EverRecall&quot; (see &quot;The share sheet's two actions&quot; below)</p>
+<h3>The shared delimiter rule (paste, sharing text, the iCloud folder, and text files)</h3>
+<p>Paste, sharing text through the share sheet, the iCloud folder, and text files (.txt / .md) all split cards using the same delimiter settings. You can change them anytime in the import screen's &quot;Delimiters&quot; section.</p>
+<ul>
+<li>Default: cards are separated by a line that contains only <strong>&quot;---&quot;</strong>, and the front/back of a card are separated by a line that contains only <strong>&quot;==&quot;</strong></li>
+<li>A symbol only counts as a delimiter when the entire line is just that symbol — a symbol inside a sentence (e.g. &quot;A---B&quot;) never causes a split</li>
+<li>To tag a batch of cards with a book title and author, use lines like <code>@@title: Book Title</code> and <code>@@author: Author Name</code> (this symbol can also be changed in settings)</li>
+</ul>
+<h3>The share sheet's two actions</h3>
+<p>The iPhone/iPad share sheet offers two different EverRecall actions — here's the difference:</p>
+<ul>
+<li><strong>&quot;Open in EverRecall&quot;</strong> (when you share a file): opens EverRecall's import screen so you can review the cards before adding them</li>
+<li><strong>&quot;Send to EverRecall&quot;</strong> (when you share selected text): adds it straight to the inbox folder with no confirmation screen. You can still edit or delete the cards afterward</li>
+</ul>
 <h3>CSV (.csv)</h3>
-<p>The first column becomes the front, and the second column becomes the back.</p>
+<p>The first column becomes the front, and the second column becomes the back. (This is a table format and isn't affected by the delimiter settings above.)</p>
 <h3>Anki package (.apkg / .colpkg)</h3>
 <p>You can import an Anki export package directly. You don't need to change any export settings.</p>
 <h3>Automatic iCloud folder import</h3>
-<p>Just drop files into an iCloud folder and they're picked up automatically. See the next page for details.</p>
-<h3>How to open a file (all formats)</h3>
-<p>For any of the formats above, choose <strong>&quot;Open in EverRecall&quot;</strong> from the share sheet on iPhone/iPad, or pick the file directly from EverRecall's import screen.</p>
+<p>Just drop .txt / .md files into an iCloud folder and they're picked up automatically, using the same delimiter rule described above. See the next page for details.</p>
 </section><section class="block">
 <h2>What doesn't carry over</h2>
 <p>Some things don't carry over from Anki. Please keep this in mind before you start:</p>
