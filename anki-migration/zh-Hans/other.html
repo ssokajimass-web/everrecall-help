@@ -159,6 +159,7 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <p>第一列作为正面，第二列作为背面。（这是表格格式，不受上述分隔符设置影响。）</p>
 <h3>Anki 包（.apkg / .colpkg）</h3>
 <p>可以直接导入从 Anki 导出的包文件。导出时不需要修改任何设置。</p>
+<p>如果还想继承学习记录（复习间隔），请在导出前于 Anki 的导出界面开启 <strong>&quot;包含排程信息&quot;</strong>。开启该选项导出的文件，在导入 EverRecall 时可以选择&quot;继承&quot;或&quot;重新开始&quot;。未开启该选项导出的文件，会全部作为全新卡片导入。</p>
 <h3>自动添加到 iCloud 文件夹</h3>
 <p>只需把 .txt / .md 文件放进 iCloud 文件夹，就会按上述同样的分隔符规则自动识别导入。详情请参阅下一页。</p>
 </section><section class="block">
@@ -166,7 +167,6 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <p>有些内容无法从 Anki 迁移过来，请事先了解。</p>
 <ul>
 <li><strong>音频文件、图片文件</strong>（EverRecall 只导入文字卡片）</li>
-<li><strong>学习记录、复习间隔</strong>（Anki 中的正确率和下次复习日期不会被继承，导入 EverRecall 后将从头开始学习）</li>
 <li><strong>没有文字的卡片</strong>（仅有音频、仅有图片、图片遮挡卡等没有文字信息的卡片将不会被导入）</li>
 </ul>
 

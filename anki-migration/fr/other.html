@@ -159,6 +159,7 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <p>La première colonne devient le recto, la seconde colonne devient le verso. (Il s'agit d'un format de tableau, non affecté par les réglages de séparateurs ci-dessus.)</p>
 <h3>Paquet Anki (.apkg / .colpkg)</h3>
 <p>Vous pouvez importer directement un paquet exporté depuis Anki. Aucun réglage d'exportation à modifier.</p>
+<p>Si vous souhaitez également conserver votre historique d'apprentissage (les intervalles de révision), activez l'option <strong>« Inclure les informations de planification »</strong> dans l'écran d'exportation d'Anki avant d'exporter. Les fichiers exportés avec cette option activée vous permettent de choisir « Conserver » ou « Recommencer à zéro » lors de l'importation dans EverRecall. Les fichiers exportés sans cette option sont importés comme des cartes entièrement nouvelles.</p>
 <h3>Ajout automatique via un dossier iCloud</h3>
 <p>Il suffit de déposer des fichiers .txt / .md dans un dossier iCloud pour qu'ils soient détectés automatiquement, selon la même règle de séparateur décrite ci-dessus. Consultez la page suivante pour plus de détails.</p>
 </section><section class="block">
@@ -166,7 +167,6 @@ section.block:first-of-type { margin-top: var(--space-l); padding-top: 0; border
 <p>Certains éléments ne sont pas transférés depuis Anki. Merci d'en tenir compte avant de commencer :</p>
 <ul>
 <li><strong>Fichiers audio et images</strong> (EverRecall n'importe que les cartes contenant du texte)</li>
-<li><strong>Historique d'apprentissage et intervalles de révision</strong> (votre taux de réussite et vos prochaines dates de révision dans Anki ne sont pas conservés ; l'apprentissage recommence à zéro dès l'importation des cartes dans EverRecall)</li>
 <li><strong>Cartes sans texte</strong> (les cartes composées uniquement d'audio, uniquement d'images, ou les cartes à occlusion d'image n'ont pas de contenu textuel à importer et sont donc ignorées)</li>
 </ul>
 
