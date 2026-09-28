@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
-<meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<title>Likewater — 静かに、邪魔をしない学習アプリをつくる</title>
+<meta name="description" content="Likewater は「上善如水」に由来する屋号で、iOS アプリの企画・開発・運営を行う個人事業です。EverRecall などのアプリを提供しています。">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/ja/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
-<meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Likewater — 静かに、邪魔をしない学習アプリをつくる">
+<meta property="og:description" content="Likewater は「上善如水」に由来する屋号で、iOS アプリの企画・開発・運営を行う個人事業です。EverRecall などのアプリを提供しています。">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/ja/index.html">
+<meta property="og:locale" content="ja_JP">
 <style>
 :root {
   color-scheme: light dark;
@@ -196,27 +196,56 @@ footer.site-footer {
 </style>
 </head>
 <body>
-<div class="container">
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="">Likewater</a>
+<nav class="header-nav" aria-label="主要メニュー">
+<a href="everrecall/">EverRecall</a>
+<a href="support/">お問い合わせ</a>
+<a class="lang-toggle" href="../en/" hreflang="en">English</a>
+</nav>
+</div>
+</header>
+<div class="page">
+<section class="hero stagger">
+<div>
+<span class="eyebrow">屋号</span>
 <h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<p class="hero-lede">老子「上善如水（じょうぜんはみずのごとし）」——最も善きあり方は水のようなものだ、という言葉に由来します。水のように、使う人の生活の形に合わせて静かに寄り添い、決して邪魔をしないアプリをつくることを目指しています。</p>
+</div>
+<div>
+<h2>アプリ</h2>
+<ul class="app-card-list">
+<li><a class="app-card is-live" href="everrecall/">
+<span class="app-name">EverRecall</span>
+<span class="app-desc">音声で回す間隔反復学習アプリ。Anki からの移行に対応。</span>
+</a></li>
+<li class="app-card is-pending">
+<span class="app-name">BookCapture</span>
+<span class="app-status">準備中</span>
+</li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</section>
+<section class="block">
+<h2>事業内容</h2>
+<p>iOS アプリの企画・開発・運営を行っています。個人開発ですが、Apple の審査基準・アクセシビリティ・プライバシー保護を、事業規模に関わらず守るべき最低条件として扱っています。</p>
+</section>
+<section class="block">
+<h2>お問い合わせ</h2>
+<p>アプリに関するご質問・不具合報告は、下記の連絡先までお願いします。</p>
+<p><a href="mailto:support@likewater.app">support@likewater.app</a> / <a href="support/">お問い合わせページ</a></p>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS アプリの企画・開発・運営</span>
+<ul class="footer-links">
+<li><a href="privacy/">プライバシーポリシー</a></li>
+<li><a href="terms/">利用規約</a></li>
+<li><a href="support/">お問い合わせ</a></li>
+</ul>
+</div>
+</footer>
 </body>
 </html>

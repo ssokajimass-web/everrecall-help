@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
-<meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<title>お問い合わせ — Likewater</title>
+<meta name="description" content="EverRecall・BookCapture に関するお問い合わせ先とよくある質問。">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/ja/support/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/support/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/support/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
-<meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<meta property="og:locale" content="en_US">
+<meta property="og:title" content="お問い合わせ — Likewater">
+<meta property="og:description" content="EverRecall・BookCapture に関するお問い合わせ先とよくある質問。">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/ja/support/index.html">
+<meta property="og:locale" content="ja_JP">
 <style>
 :root {
   color-scheme: light dark;
@@ -196,27 +196,39 @@ footer.site-footer {
 </style>
 </head>
 <body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="../">Likewater</a>
+<nav class="header-nav" aria-label="主要メニュー">
+<a href="../everrecall/">EverRecall</a>
+<a href="../support/">お問い合わせ</a>
+<a class="lang-toggle" href="../../en/support/" hreflang="en">English</a>
+</nav>
+</div>
+</header>
 <div class="container">
-<h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<h1>お問い合わせ</h1>
+<p>アプリに関するご質問・不具合報告・ご要望は、下記のメールアドレスまでご連絡ください。</p>
+<p><a href="mailto:support@likewater.app">support@likewater.app</a></p>
+<section class="block">
+<h2>よくある質問</h2>
+<dl class="faq-list">
+<div class="faq-item"><dt>サブスクリプションを解約したい</dt><dd>お使いの端末の「設定」アプリ → ご自身の Apple ID 名 →「サブスクリプション」から解約できます。当方側での操作はできません。</dd></div>
+<div class="faq-item"><dt>返金してほしい</dt><dd>返金は Apple の手続きに従って行われます。App Store の購入履歴から返金をリクエストしてください。当方では返金処理を行えません。</dd></div>
+<div class="faq-item"><dt>Anki からデータを移行したい</dt><dd>EverRecall アプリ内のヘルプから、お使いの Anki クライアント（コンピュータ／モバイル／Android／ウェブ）に合わせた手順をご案内しています。</dd></div>
+<div class="faq-item"><dt>不具合を見つけた</dt><dd>発生状況（端末・OSバージョン・操作手順）を添えて、下記メールアドレスまでご連絡ください。</dd></div>
+</dl>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS アプリの企画・開発・運営</span>
+<ul class="footer-links">
+<li><a href="../privacy/">プライバシーポリシー</a></li>
+<li><a href="../terms/">利用規約</a></li>
+<li><a href="../support/">お問い合わせ</a></li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</footer>
 </body>
 </html>

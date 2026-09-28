@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
-<meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<title>プライバシーポリシー — Likewater</title>
+<meta name="description" content="Likewater が提供する EverRecall・BookCapture のプライバシーポリシー。">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/ja/privacy/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/privacy/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/privacy/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
-<meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<meta property="og:locale" content="en_US">
+<meta property="og:title" content="プライバシーポリシー — Likewater">
+<meta property="og:description" content="Likewater が提供する EverRecall・BookCapture のプライバシーポリシー。">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/ja/privacy/index.html">
+<meta property="og:locale" content="ja_JP">
 <style>
 :root {
   color-scheme: light dark;
@@ -196,27 +196,61 @@ footer.site-footer {
 </style>
 </head>
 <body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="../">Likewater</a>
+<nav class="header-nav" aria-label="主要メニュー">
+<a href="../everrecall/">EverRecall</a>
+<a href="../support/">お問い合わせ</a>
+<a class="lang-toggle" href="../../en/privacy/" hreflang="en">English</a>
+</nav>
+</div>
+</header>
 <div class="container">
-<h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<h1>プライバシーポリシー</h1>
+<p class="legal-meta">最終更新日: 2026-09-28</p>
+<p>Likewater（以下「当方」）は、iOS アプリ EverRecall および BookCapture（以下「本アプリ」）を提供しています。本ポリシーは、本アプリが扱うデータについて説明します。</p>
+<section class="block">
+<h2>EverRecall について</h2>
+<div class="legal-section"><h3>購入情報</h3><p>サブスクリプションの購入・復元には RevenueCat を利用しています。購入時の取引情報（Apple ID に紐づく購入・更新状況）は決済基盤である RevenueCat に送信され、有効な権利（サブスクリプション状態）の判定に使われます。当方は購入情報をこれ以外の目的に使用しません。</p></div>
+<div class="legal-section"><h3>解析・広告トラッキング</h3><p>本アプリは、利用状況を収集する解析（アナリティクス）SDKや広告トラッキングSDKを組み込んでいません。</p></div>
+<div class="legal-section"><h3>クラッシュ診断</h3><p>Apple の MetricKit を使い、クラッシュ発生時の要約情報を端末内にのみ記録します。この記録は端末外へ自動送信されることはなく、設定画面から内容を確認できます。</p></div>
+<div class="legal-section"><h3>iCloud の利用</h3><p>「ファイル」アプリの iCloud Drive 上にある取り込み用フォルダを監視し、あなたが置いたテキストファイル（.txt / .md）をカードとして取り込む機能があります。このフォルダの同期は Apple の iCloud によって行われ、当方のサーバーを経由しません。これ以外の目的で iCloud を利用することはありません。</p></div>
+<div class="legal-section"><h3>端末内保存</h3><p>作成したカード・学習履歴などのデータは、端末内にのみ保存されます（SwiftData、クラウド同期なし）。当方のサーバーへアップロードされることはありません。</p></div>
+<div class="legal-section"><h3>アクセス許可を求めない項目</h3><p>本アプリは、カメラ・マイク・位置情報・連絡先へのアクセスを一切要求しません。</p></div>
+</section>
+<section class="block">
+<h2>BookCapture について</h2>
+<div class="legal-section"><h3>撮影した画像</h3><p>カメラで撮影した書籍ページの画像は、まず端末内に保存されます。</p></div>
+<div class="legal-section"><h3>転写（文字起こし）のためのサーバー送信</h3><p>文字起こしを実行すると、その画像が当方が運用する中継サーバーへ送信され、そこから第三者のAIサービス（現在は OpenRouter 経由の Google Gemini）へ転送され、テキスト化されます。中継サーバーは画像や転写結果を保存せず、端末の認証情報とレート制限用のカウンタのみを保持します。送信は文字起こしを実行した場合にのみ発生します。</p></div>
+<div class="legal-section"><h3>端末内保存</h3><p>書籍のタイトル・著者・ISBN・転写されたテキスト・撮影画像は、端末内のデータベースに保存されます。</p></div>
+<div class="legal-section"><h3>購入情報</h3><p>現時点で BookCapture に課金機能はなく、購入情報を扱いません。</p></div>
+<div class="legal-section"><h3>クラッシュ診断</h3><p>EverRecall と同様、Apple の MetricKit を使い、クラッシュ要約を端末内にのみ記録します。</p></div>
+<div class="legal-section"><h3>端末バックアップについて</h3><p>撮影画像はアプリ内の通常保存領域に置かれるため、あなたが iOS のバックアップ（iCloud バックアップや PC 経由のバックアップ）を有効にしている場合、その一部として含まれることがあります。これは Apple の標準的な端末バックアップの仕組みによるもので、当方が能動的に同期・収集しているものではありません。</p></div>
+</section>
+<section class="block">
+<h2>子どものプライバシー</h2>
+<p>本アプリは13歳未満の子どもを対象としていません。</p>
+</section>
+<section class="block">
+<h2>本ポリシーの変更</h2>
+<p>本ポリシーの内容は、アプリの機能変更に応じて更新されることがあります。重要な変更がある場合は、このページの最終更新日を更新してお知らせします。</p>
+</section>
+<section class="block">
+<h2>お問い合わせ</h2>
+<p>本ポリシーに関するご質問は、下記までご連絡ください。</p>
+<p><a href="mailto:support@likewater.app">support@likewater.app</a></p>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS アプリの企画・開発・運営</span>
+<ul class="footer-links">
+<li><a href="../privacy/">プライバシーポリシー</a></li>
+<li><a href="../terms/">利用規約</a></li>
+<li><a href="../support/">お問い合わせ</a></li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</footer>
 </body>
 </html>

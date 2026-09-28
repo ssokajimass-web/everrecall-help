@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
-<meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<title>EverRecall — Likewater</title>
+<meta name="description" content="EverRecall is a spaced-repetition app you can review by ear. It supports migrating your cards from Anki.">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/en/everrecall/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/everrecall/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/everrecall/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
-<meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<meta property="og:title" content="EverRecall — Likewater">
+<meta property="og:description" content="EverRecall is a spaced-repetition app you can review by ear. It supports migrating your cards from Anki.">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/en/everrecall/index.html">
 <meta property="og:locale" content="en_US">
 <style>
 :root {
@@ -196,27 +196,40 @@ footer.site-footer {
 </style>
 </head>
 <body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="../">Likewater</a>
+<nav class="header-nav" aria-label="Main menu">
+<a href="../everrecall/">EverRecall</a>
+<a href="../support/">Contact</a>
+<a class="lang-toggle" href="../../ja/everrecall/" hreflang="ja">日本語</a>
+</nav>
+</div>
+</header>
 <div class="container">
-<h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<h1>EverRecall</h1>
+<p>A spaced-repetition app that helps what you're learning stick, just by listening. You can review without looking at the screen.</p>
+<section class="block">
+<h2>What it does</h2>
+<ul>
+<li>Reads your cards aloud with speech synthesis, so you can review by listening alone</li>
+<li>Uses a science-based spaced-repetition algorithm (FSRS) to schedule your next review automatically</li>
+<li>Supports migrating your existing cards from Anki</li>
+</ul>
+</section>
+<section class="block">
+<div class="badge-placeholder"><span aria-hidden="true">&#9679;</span> Coming soon. The badge and link will be added here once it's live.</div>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS app design, development, and operations</span>
+<ul class="footer-links">
+<li><a href="../privacy/">Privacy Policy</a></li>
+<li><a href="../terms/">Terms of Service</a></li>
+<li><a href="../support/">Contact</a></li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</footer>
 </body>
 </html>

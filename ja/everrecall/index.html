@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
-<meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<title>EverRecall — Likewater</title>
+<meta name="description" content="音声で回す間隔反復学習アプリ EverRecall の紹介。Anki からの移行に対応しています。">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/ja/everrecall/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/everrecall/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/everrecall/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
-<meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<meta property="og:locale" content="en_US">
+<meta property="og:title" content="EverRecall — Likewater">
+<meta property="og:description" content="音声で回す間隔反復学習アプリ EverRecall の紹介。Anki からの移行に対応しています。">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/ja/everrecall/index.html">
+<meta property="og:locale" content="ja_JP">
 <style>
 :root {
   color-scheme: light dark;
@@ -196,27 +196,40 @@ footer.site-footer {
 </style>
 </head>
 <body>
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="../">Likewater</a>
+<nav class="header-nav" aria-label="主要メニュー">
+<a href="../everrecall/">EverRecall</a>
+<a href="../support/">お問い合わせ</a>
+<a class="lang-toggle" href="../../en/everrecall/" hreflang="en">English</a>
+</nav>
+</div>
+</header>
 <div class="container">
-<h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<h1>EverRecall</h1>
+<p>覚えたいことを、耳で繰り返して定着させる間隔反復（Spaced Repetition）アプリです。画面を見なくても、聞くだけで復習が進みます。</p>
+<section class="block">
+<h2>できること</h2>
+<ul>
+<li>音声合成でカードを読み上げ、聞くだけで復習できる</li>
+<li>科学的な間隔反復アルゴリズム（FSRS）で、次に復習すべきタイミングを自動で計算する</li>
+<li>Anki からのカード移行に対応</li>
+</ul>
+</section>
+<section class="block">
+<div class="badge-placeholder"><span aria-hidden="true">&#9679;</span> 公開準備中です。掲載後にバッジとリンクをここに追加します。</div>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS アプリの企画・開発・運営</span>
+<ul class="footer-links">
+<li><a href="../privacy/">プライバシーポリシー</a></li>
+<li><a href="../terms/">利用規約</a></li>
+<li><a href="../support/">お問い合わせ</a></li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</footer>
 </body>
 </html>

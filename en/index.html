@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Likewater</title>
+<title>Likewater — Quiet, unobtrusive apps that fit your life</title>
 <meta name="description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/en/index.html">
+<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/ja/index.html">
+<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/en/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
-<meta property="og:title" content="Likewater">
+<meta property="og:title" content="Likewater — Quiet, unobtrusive apps that fit your life">
 <meta property="og:description" content="Likewater is a sole proprietorship (named after a line from the Tao Te Ching) that designs, builds, and operates iOS apps, including EverRecall.">
-<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/index.html">
+<meta property="og:url" content="https://ssokajimass-web.github.io/everrecall-help/en/index.html">
 <meta property="og:locale" content="en_US">
 <style>
 :root {
@@ -196,27 +196,56 @@ footer.site-footer {
 </style>
 </head>
 <body>
-<div class="container">
+<header class="site-header">
+<div class="site-header-inner">
+<a class="wordmark" href="">Likewater</a>
+<nav class="header-nav" aria-label="Main menu">
+<a href="everrecall/">EverRecall</a>
+<a href="support/">Contact</a>
+<a class="lang-toggle" href="../ja/" hreflang="ja">日本語</a>
+</nav>
+</div>
+</header>
+<div class="page">
+<section class="hero stagger">
+<div>
+<span class="eyebrow">About the name</span>
 <h1>Likewater</h1>
-<p>Choose your language / 言語を選んでください</p>
-<ul class="footer-links" style="flex-direction: column;">
-<li><a href="ja/">日本語</a></li>
-<li><a href="en/">English</a></li>
+<p class="hero-lede">The name comes from a line in the Tao Te Ching: &quot;the highest good is like water.&quot; Like water, we want our apps to quietly take the shape of your life instead of demanding attention.</p>
+</div>
+<div>
+<h2>Apps</h2>
+<ul class="app-card-list">
+<li><a class="app-card is-live" href="everrecall/">
+<span class="app-name">EverRecall</span>
+<span class="app-desc">A spaced-repetition app you can review by ear. Supports migrating from Anki.</span>
+</a></li>
+<li class="app-card is-pending">
+<span class="app-name">BookCapture</span>
+<span class="app-status">Coming later</span>
+</li>
 </ul>
 </div>
-<script>
-(function () {
-  var supported = ["ja","en"];
-  var nav = (navigator.languages || [navigator.language || "en"]);
-  for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
-    if (supported.indexOf(base) !== -1) {
-      location.replace(base + "/");
-      return;
-    }
-  }
-  location.replace("en/");
-})();
-</script>
+</section>
+<section class="block">
+<h2>What we do</h2>
+<p>We design, build, and operate iOS apps. Even as a one-person studio, we treat Apple's review guidelines, accessibility, and privacy protection as a baseline, not an afterthought.</p>
+</section>
+<section class="block">
+<h2>Contact</h2>
+<p>For questions or bug reports about our apps, please reach us at the address below.</p>
+<p><a href="mailto:support@likewater.app">support@likewater.app</a> / <a href="support/">Contact page</a></p>
+</section>
+</div>
+<footer class="site-footer">
+<div class="site-footer-inner">
+<span>&copy; Likewater — iOS app design, development, and operations</span>
+<ul class="footer-links">
+<li><a href="privacy/">Privacy Policy</a></li>
+<li><a href="terms/">Terms of Service</a></li>
+<li><a href="support/">Contact</a></li>
+</ul>
+</div>
+</footer>
 </body>
 </html>
