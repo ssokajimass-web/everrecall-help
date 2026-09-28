@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Service</title>
 <meta name="description" content="Terms of Service for EverRecall and BookCapture, apps provided by Likewater.">
 <link rel="canonical" href="https://ssokajimass-web.github.io/everrecall-help/terms/index.html">
-<link rel="alternate" hreflang="ja" href="https://ssokajimass-web.github.io/everrecall-help/terms/index.html">
-<link rel="alternate" hreflang="en" href="https://ssokajimass-web.github.io/everrecall-help/terms/index.html">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Likewater">
 <meta property="og:title" content="Terms of Service">
@@ -106,8 +105,18 @@ header.site-header {
 .header-nav { display: flex; align-items: center; gap: var(--space-m); flex-wrap: wrap; }
 .header-nav a { color: var(--text-secondary); font-size: 0.9375rem; text-decoration: none; }
 .header-nav a:hover { color: var(--accent); }
-.lang-toggle { font-size: 0.875rem; color: var(--text-tertiary); text-decoration: none; border: 1px solid var(--border); border-radius: 999px; padding: 0.3em 0.9em; }
-.lang-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.lang-select {
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  cursor: pointer;
+}
+.lang-select:hover, .lang-select:focus-visible { color: var(--accent); border-color: var(--accent); }
 .hero {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -202,14 +211,35 @@ footer.site-footer {
 <ul class="footer-links" style="flex-direction: column;">
 <li><a href="ja/terms/">日本語</a></li>
 <li><a href="en/terms/">English</a></li>
+<li><a href="zh-Hans/terms/">简体中文</a></li>
+<li><a href="zh-Hant/terms/">繁體中文</a></li>
+<li><a href="ko/terms/">한국어</a></li>
+<li><a href="de/terms/">Deutsch</a></li>
+<li><a href="fr/terms/">Français</a></li>
+<li><a href="es/terms/">Español</a></li>
+<li><a href="pt/terms/">Português</a></li>
+<li><a href="ru/terms/">Русский</a></li>
+<li><a href="ar/terms/">العربية</a></li>
+<li><a href="vi/terms/">Tiếng Việt</a></li>
 </ul>
 </div>
 <script>
 (function () {
-  var supported = ["ja","en"];
+  var supported = ["ja","en","zh-Hans","zh-Hant","ko","de","fr","es","pt","ru","ar","vi"];
+  // "zh" だけでは簡体字/繁体字を判別できないため、地域サブタグ/スクリプトサブタグを見て振り分ける。
+  function normalize(tag) {
+    var lower = tag.toLowerCase();
+    if (lower.indexOf("zh") === 0) {
+      if (lower.indexOf("hant") !== -1 || lower.indexOf("-tw") !== -1 || lower.indexOf("-hk") !== -1 || lower.indexOf("-mo") !== -1) {
+        return "zh-Hant";
+      }
+      return "zh-Hans";
+    }
+    return tag.split("-")[0];
+  }
   var nav = (navigator.languages || [navigator.language || "en"]);
   for (var i = 0; i < nav.length; i++) {
-    var base = nav[i].split("-")[0];
+    var base = normalize(nav[i]);
     if (supported.indexOf(base) !== -1) {
       location.replace(base + "/terms/");
       return;
