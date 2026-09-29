@@ -18,21 +18,14 @@ generated HTML/CSS output. Do not edit the HTML files directly — they are over
 every deploy. Deploys automatically via a GitHub Actions workflow in the `Hippocampus`
 repo that pushes the freshly built `web/dist/` here on every relevant change.
 
-## Activating the `likewater.app` custom domain
+## Custom domain: `likewater.works`
 
-Once the `likewater.app` domain is registered, do the following in **one commit** to this
-repository:
+The site is served at `https://likewater.works/` (registered 2026-09-29 at Cloudflare; DNS
+A/AAAA records point at GitHub Pages, `www` is a CNAME to `ssokajimass-web.github.io`).
+The `CNAME` file in this repository is **generated on every deploy** by
+`web/build-site.mjs` (`CONFIG.customDomain`), because the deploy replaces this repository's
+contents wholesale. Do not add it by hand. `likewater.app` was never registered and is not used.
 
-1. Create a file named `CNAME` at the repository root containing exactly one line:
-   `likewater.app`
-2. In this repository's Settings → Pages, set the custom domain to `likewater.app` and wait
-   for DNS verification, then enable "Enforce HTTPS".
-3. In the private `Hippocampus` repo, update `CONFIG.baseURL` in `web/build-site.mjs` from
-   `https://ssokajimass-web.github.io/everrecall-help` to `https://likewater.app` (this only
-   affects OGP/canonical tags — all internal links are relative, so nothing else needs to
-   change), then push to `main` so the next deploy regenerates the site with the new
-   canonical URLs.
-
-No other file needs to change — every link on the site is relative, so it keeps working
-identically whether it's served from `https://ssokajimass-web.github.io/everrecall-help/`
-or from `https://likewater.app/`.
+Every link on the site is relative, so it works identically from
+`https://ssokajimass-web.github.io/everrecall-help/` (which GitHub redirects to the custom
+domain) and from `https://likewater.works/`.
